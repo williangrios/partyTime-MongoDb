@@ -8,8 +8,9 @@ const port = 3000;
 const app = express();
 
 //routes
-const authRouter = require("./routes/authRoutes")
-const userRouter = require("./routes/userRoutes")
+const authRouter = require("./routes/authRoutes");
+const userRouter = require("./routes/userRoutes");
+const partyRouter = require("./routes/partyRoutes");
 
 app.use(cors())
 //trabalhar com json na comunicacao
@@ -19,6 +20,8 @@ app.use(express.static("public"))
 //rotas de autenticacao
 app.use("/api/auth", authRouter)
 app.use("/api/user", userRouter)
+app.use("/api/party", partyRouter)
+
 
 
 //conexao mongodb
